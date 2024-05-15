@@ -7,5 +7,8 @@ use Illuminate\Support\Arr;
 
 class Job extends Model
 {
- protected $table = 'job_listing';
+    protected $table = 'job_listing';
+
+    protected $fillable = ['title', 'sallary']; 
+
 }
