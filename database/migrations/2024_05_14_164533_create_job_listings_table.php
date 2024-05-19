@@ -10,7 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('job_listing', function (Blueprint $table) {
+        Schema::create('job_listings', function (Blueprint $table) {
             $table->id();
             // $table->unsignedBigInteger('employer_id');
             $table->foreignIdFor(\App\Models\Employer::class);
@@ -25,6 +25,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('job_listing');
+        Schema::dropIfExists('job_listings');
     }
 };
