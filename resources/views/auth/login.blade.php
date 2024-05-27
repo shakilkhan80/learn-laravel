@@ -12,8 +12,8 @@
                         <div class="mt-2">
                             <div
                                 class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <x-form-input type="email" name="email" id="email" autocomplete="email"
-                                    placeholder="$50,000 per year" required />
+                                <x-form-input type="email" :value="old('email')" name="email" id="email"
+                                    autocomplete="email" placeholder="$50,000 per year" required />
                             </div>
                         </div>
                         <x-form-error name="email" />
