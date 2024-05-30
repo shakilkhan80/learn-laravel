@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Job;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class JobController extends Controller
 {
@@ -45,6 +47,10 @@ class JobController extends Controller
     }
     public function edit(Job $job)
     {
+        if (Auth::user()->cannot('edit-job', $job)) {
+            dd("You can't edit this job");
+        }
+        Gate::authorize('edit-job', $job);
 
         return view('job.edit', [
             'job' => $job
